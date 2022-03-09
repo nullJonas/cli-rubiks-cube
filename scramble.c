@@ -52,8 +52,9 @@ void show_sticker(char c){
 void show_cube(struct cube *cube){
     int i, j, k;
     // U side
+    printf("\n");
     for (i = 0; i < 3; i++){
-        printf("        ");
+        printf("          ");
         for (j = 0; j < 3; j++)
             show_sticker(cube->stickers[0][i][j]);
         printf("\n");
@@ -62,21 +63,21 @@ void show_cube(struct cube *cube){
     printf("\n");
     for (i = 0; i < 3; i++){
         for (k = 1; k < 5; k++){
+            printf("  ");
             for (j = 0; j < 3; j++)
                 show_sticker(cube->stickers[k][i][j]);
-            printf("  ");
         }
         printf("\n");
     }
     printf("\n");
     // D side
     for (i = 0; i < 3; i++){
-        printf("        ");
+        printf("          ");
         for (j = 0; j < 3; j++)
             show_sticker(cube->stickers[5][i][j]);
         printf("\n");
     }
-    printf("\n\n\n");
+    printf("\n\n");
 }
 
 void process_input(struct cube *cube, char buffer[]){
@@ -112,12 +113,15 @@ void process_input(struct cube *cube, char buffer[]){
                 break;
             case 'M':
                 code1 = 6;
+                isWide = 0;
                 break;
             case 'E':
                 code1 = 7;
+                isWide = 0;
                 break;
             case 'S':
                 code1 = 8;
+                isWide = 0;
                 break;
 
         // Cube rotations
